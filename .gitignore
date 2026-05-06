@@ -1,0 +1,19 @@
+# DataFlex temporales/sesiones
+Data/WebAppSession.dat
+Data/webappsession.k1
+Data/webappsession.k2
+Data/webappsession.k3
+Data/Filelist.cfg
+
+*.k1
+*.k2
+*.k3
+*.tmp
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
