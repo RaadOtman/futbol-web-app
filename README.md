@@ -160,25 +160,6 @@ jugador     → equipo
 jugador     → posicion
 ```
 
----
-
-# 📸 Capturas
-
-## 🏠 Dashboard
-
-<img width="100%" src="https://placehold.co/1200x600/0F172A/FFFFFF?text=Dashboard+Screenshot">
-
-<br>
-
-## ⚽ Gestión de equipos
-
-<img width="100%" src="https://placehold.co/1200x600/14532D/FFFFFF?text=Equipos">
-
-<br>
-
-## 🔥 Gestión de jugadores
-
-<img width="100%" src="https://placehold.co/1200x600/166534/FFFFFF?text=Jugadores">
 
 ---
 
