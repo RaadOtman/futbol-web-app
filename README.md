@@ -7,7 +7,6 @@
 <img src="https://img.shields.io/badge/DataFlex-2025-0F172A?style=for-the-badge">
 <img src="https://img.shields.io/badge/MySQL-Database-14532D?style=for-the-badge&logo=mysql&logoColor=white">
 <img src="https://img.shields.io/badge/GitFlow-Workflow-38BDF8?style=for-the-badge&logo=git&logoColor=white">
-<img src="https://img.shields.io/badge/Status-Completed-22C55E?style=for-the-badge">
 
 <br><br>
 
