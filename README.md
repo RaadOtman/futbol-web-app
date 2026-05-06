@@ -1,88 +1,240 @@
-# Futbol Web App ⚽
+<div align="center">
 
-Aplicación web desarrollada con DataFlex orientada a la gestión de competiciones, jugadores, entrenadores y equipos de fútbol.
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=240&color=0:0F172A,35:14532D,70:166534,100:38BDF8&text=Futbol%20Web%20App&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=DataFlex%20•%20MySQL%20•%20GitFlow%20•%20Dashboard%20UI&descAlignY=58&descSize=18"/>
 
-El proyecto utiliza una arquitectura basada en WebApp Framework de DataFlex, aplicando un flujo de trabajo profesional con GitFlow, personalización visual mediante themes y conexión a base de datos MySQL.
+<br>
 
----
+<img src="https://img.shields.io/badge/DataFlex-2025-0F172A?style=for-the-badge">
+<img src="https://img.shields.io/badge/MySQL-Database-14532D?style=for-the-badge&logo=mysql&logoColor=white">
+<img src="https://img.shields.io/badge/GitFlow-Workflow-38BDF8?style=for-the-badge&logo=git&logoColor=white">
+<img src="https://img.shields.io/badge/Status-Completed-22C55E?style=for-the-badge">
 
-# Características
+<br><br>
 
-- Gestión de jugadores
-- Gestión de entrenadores
-- Gestión de equipos
-- Gestión de ligas
-- Gestión de posiciones
-- Dashboard personalizado
-- Navegación DrillDown
-- Tema visual personalizado
-- Integración con MySQL
-- Flujo GitFlow
+<h3>⚽ Aplicación web de gestión futbolística desarrollada con DataFlex</h3>
 
----
+<p>
+Proyecto académico orientado a simular una aplicación empresarial real utilizando <b>DataFlex WebApp Framework</b>, <b>MySQL</b> y una estructura profesional basada en <b>GitFlow</b>.
+</p>
 
-# Tecnologías utilizadas
-
-- DataFlex 2025
-- WebApp Framework
-- MySQL
-- IIS
-- Git
-- GitFlow
-- SourceTree
+</div>
 
 ---
 
-# Estructura del proyecto
+# 🚀 Sobre el proyecto
+
+**Futbol Web App** es una aplicación web desarrollada para gestionar información relacionada con:
+
+- jugadores
+- entrenadores
+- equipos
+- ligas
+- posiciones
+
+El proyecto no solo se centra en la funcionalidad, sino también en trabajar con una estructura más profesional:
+
+✅ GitFlow  
+✅ ramas feature  
+✅ merges organizados  
+✅ dashboard personalizado  
+✅ themes personalizados  
+✅ estructura modular  
+✅ MySQL conectado a DataFlex  
+
+---
+
+# ✨ Características principales
+
+<div align="center">
+
+| Funcionalidad | Estado |
+|---|---|
+| 🏆 Gestión de ligas | ✅ |
+| ⚽ Gestión de equipos | ✅ |
+| 🔥 Gestión de jugadores | ✅ |
+| 🧑‍🏫 Gestión de entrenadores | ✅ |
+| 🛡️ Gestión de posiciones | ✅ |
+| 🎨 Dashboard personalizado | ✅ |
+| 🧭 Navegación DrillDown | ✅ |
+| 🗄️ Integración MySQL | ✅ |
+| 🌿 GitFlow | ✅ |
+
+</div>
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=git,mysql,vscode"/>
+
+</div>
+
+<br>
+
+| Tecnología | Uso |
+|---|---|
+| DataFlex 2025 | Desarrollo principal |
+| WebApp Framework | Aplicación web |
+| MySQL | Base de datos |
+| IIS | Servidor web |
+| Git | Control de versiones |
+| GitFlow | Organización del desarrollo |
+| SourceTree | Gestión visual de ramas |
+| DataFlex Styler | Personalización visual |
+
+---
+
+# 🧩 Arquitectura del proyecto
 
 ```txt
 FutbolWebApp/
 │
 ├── AppSrc/
 ├── AppHtml/
+├── DDSrc/
 ├── Data/
 ├── Programs/
 ├── IdeSrc/
-└── CssThemes/
+└── README.md
+```
 
 ---
 
-# Workflow utilizado
+# 🌿 GitFlow Workflow
 
-El proyecto sigue una estructura GitFlow para mantener un desarrollo más organizado y profesional.
+El proyecto se ha organizado utilizando GitFlow para trabajar de forma más ordenada y profesional.
 
-main      → versión estable
-develop   → desarrollo principal
-feature/* → nuevas funcionalidades
+```txt
+main
+│
+└── develop
+    │
+    ├── feature/database
+    ├── feature/selects-zooms
+    ├── feature/dashboard
+    └── feature/theme
+```
 
-Dashboard personalizado
+---
 
-El sistema incluye un dashboard visual con tiles interactivos y diseño personalizado mediante themes propios de DataFlex.
+# 🎨 Dashboard personalizado
 
-Cada módulo del sistema cuenta con accesos rápidos orientados a mejorar la navegación y la experiencia de usuario.
+El dashboard ha sido personalizado utilizando:
 
+- tiles interactivos
+- iconos visuales
+- subtítulos descriptivos
+- navegación rápida
+- themes personalizados
 
-Base de datos
+Ejemplo:
 
-La aplicación trabaja con tablas conectadas mediante MySQL para gestionar la información del sistema:
+```dataflex
+Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">🏆 Ligas</div><div class="Tile_Subtitle">Competiciones disponibles</div></div>'
+```
 
-* Jugadores
-* Entrenadores
-* Equipos
-* Ligas
-* Posiciones
+---
 
-Objetivo del proyecto
+# 🗄️ Base de datos
 
-El objetivo principal del proyecto es simular una aplicación web de gestión deportiva utilizando tecnologías vistas durante el ciclo DAW, aplicando además una organización más cercana a un entorno profesional real.
+La aplicación trabaja con una base de datos MySQL conectada mediante Data Dictionaries de DataFlex.
 
+## Entidades principales
 
-Autor
+```txt
+liga
+equipo
+jugador
+entrenador
+posicion
+```
 
-Otman Raad
+## Relaciones
 
-Desarrollador Web Junior
-DAW - Desarrollo de Aplicaciones Web
+```txt
+equipo      → liga
+entrenador → equipo
+jugador     → equipo
+jugador     → posicion
+```
 
-GitHub:
-https://github.com/RaadOtman
+---
+
+# 📸 Capturas
+
+## 🏠 Dashboard
+
+<img width="100%" src="https://placehold.co/1200x600/0F172A/FFFFFF?text=Dashboard+Screenshot">
+
+<br>
+
+## ⚽ Gestión de equipos
+
+<img width="100%" src="https://placehold.co/1200x600/14532D/FFFFFF?text=Equipos">
+
+<br>
+
+## 🔥 Gestión de jugadores
+
+<img width="100%" src="https://placehold.co/1200x600/166534/FFFFFF?text=Jugadores">
+
+---
+
+# 📚 Aprendizajes
+
+Durante el desarrollo del proyecto he trabajado especialmente:
+
+- creación de proyectos WebApp
+- configuración de IIS
+- integración MySQL + DataFlex
+- vistas Select y Zoom
+- navegación DrillDown
+- organización con GitFlow
+- resolución de errores de compilación
+- personalización visual del framework
+
+---
+
+# 🧠 Reflexión personal
+
+Este proyecto me ha servido para entender mucho mejor cómo organizar una aplicación empresarial utilizando DataFlex.
+
+Uno de los puntos más importantes fue rehacer el proyecto desde una base limpia y aplicar GitFlow correctamente, separando funcionalidades en ramas independientes y manteniendo una estructura más profesional.
+
+Además, la personalización visual del dashboard y los themes me permitió alejarme del estilo estándar del framework y darle una identidad más moderna al proyecto.
+
+---
+
+# 👨‍💻 Autor
+
+<div align="center">
+
+## Otman Raad
+
+### Junior Web Developer
+
+<img src="https://img.shields.io/badge/DAW-Desarrollo%20de%20Aplicaciones%20Web-0F172A?style=for-the-badge">
+
+<br><br>
+
+<a href="https://github.com/RaadOtman">
+  <img src="https://img.shields.io/badge/GitHub-RaadOtman-181717?style=for-the-badge&logo=github">
+</a>
+
+<a href="https://otmandev.vercel.app/">
+  <img src="https://img.shields.io/badge/Portfolio-otmandev.vercel.app-38BDF8?style=for-the-badge">
+</a>
+
+</div>
+
+---
+
+<div align="center">
+
+## ⚡ Clean code · Professional workflow · Constant progress
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=140&color=0:38BDF8,35:166534,70:14532D,100:0F172A&section=footer"/>
+
+</div>
