@@ -7,7 +7,7 @@ GroupCount=1
 HorizontalGroups=1
 [TabGroup0]
 GroupSize=40
-SelectedTab=2
+SelectedTab=4
 [Window0]
 Filename=Workspace Dashboard
 ViewType=101
@@ -18,18 +18,18 @@ Right=1922
 TabIndex=0
 TabGroup=0
 [Window1]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
+Filename=C:\DataFlex Projects\FutbolWebApp\AppHtml\Index.html
 ViewType=1
 Top=38
 Left=0
 Bottom=1096
 Right=1922
-CursorLine=12
-CursorColumn=34
-TabIndex=1
+CursorLine=30
+CursorColumn=4
+TabIndex=3
 TabGroup=0
 [Window2]
-Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashboard.wo
+Filename=C:\DataFlex Projects\FutbolWebApp\AppHtml\CssStyle\application.css
 ViewType=1
 Top=38
 Left=0
@@ -38,4 +38,26 @@ Right=1922
 CursorLine=0
 CursorColumn=0
 TabIndex=2
+TabGroup=0
+[Window3]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
+ViewType=1
+Top=38
+Left=0
+Bottom=1096
+Right=1922
+CursorLine=205
+CursorColumn=0
+TabIndex=1
+TabGroup=0
+[Window4]
+Filename=C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashboard.wo
+ViewType=1
+Top=38
+Left=0
+Bottom=1096
+Right=1922
+CursorLine=0
+CursorColumn=0
+TabIndex=4
 TabGroup=0
