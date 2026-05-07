@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
-Memory Available: 4763013120
+Memory Available: 4168421376
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -1508,7 +1508,7 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37382>>>               Set piColumnSpan to 49
 37383>>>               Set piColumnIndex to 27
 37384>>>               Set psCSSClass to "Tile"
-37385>>>               Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#92400e,#f59e0b);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🏆 Ligas</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Competiciones disponibles</div></div>'
+37385>>>               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview" style="background:linear-gradient(135deg,#92400e,#f59e0b);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🏆 Ligas</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Competiciones disponibles</div></div>'
 37386>>>           
 37386>>>               WebRegisterPath ntNavigateForwardCustom oSelectLiga
 37392>>>               
@@ -1523,7 +1523,7 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37401>>>               Set piColumnSpan to 53
 37402>>>               Set piColumnIndex to 78
 37403>>>               Set psCSSClass to "Tile"
-37404>>>               Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#14532d,#16a34a);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">⚽ Equipos</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Administrar equipos</div></div>'
+37404>>>               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview" style="background:linear-gradient(135deg,#14532d,#16a34a);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">⚽ Equipos</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Administrar equipos</div></div>'
 37405>>>   
 37405>>>               WebRegisterPath ntNavigateForwardCustom oSelectEquipo
 37411>>>               
@@ -1538,7 +1538,7 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37420>>>                Set piColumnSpan to 34
 37421>>>                Set piColumnIndex to 19
 37422>>>                Set psCSSClass to "Tile"
-37423>>>                Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#1d4ed8,#2563eb);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🧑‍🏫 Entrenadores</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Gestionar entrenadores</div></div>'
+37423>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview" style="background:linear-gradient(135deg,#1d4ed8,#2563eb);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🧑‍🏫 Entrenadores</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Gestionar entrenadores</div></div>'
 37424>>>                WebRegisterPath ntNavigateForwardCustom oSelectEntrenador
 37430>>>                
 37430>>>                Procedure OnClick String sId String sParam
@@ -1552,7 +1552,7 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37439>>>                Set piColumnSpan to 27
 37440>>>                Set piColumnIndex to 77
 37441>>>                Set psCSSClass to "Tile"
-37442>>>                Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#9a3412,#ea580c);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🔥 Jugadores</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Control de jugadores</div></div>'
+37442>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview" style="background:linear-gradient(135deg,#9a3412,#ea580c);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🔥 Jugadores</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Control de jugadores</div></div>'
 37443>>>            
 37443>>>                WebRegisterPath ntNavigateForwardCustom oSelectJugador
 37449>>>                
@@ -1567,7 +1567,7 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37458>>>                Set piColumnSpan to 28
 37459>>>                Set piColumnIndex to 105
 37460>>>                Set psCSSClass to "Tile"
-37461>>>                Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#7e22ce,#c026d3);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🛡️ Posiciones</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Roles en el campo</div></div>'
+37461>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview" style="background:linear-gradient(135deg,#7e22ce,#c026d3);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🛡️ Posiciones</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Roles en el campo</div></div>'
 37462>>>            
 37462>>>                WebRegisterPath ntNavigateForwardCustom oSelectPosicion
 37468>>>                
@@ -3509,7 +3509,7 @@ Including file: ZoomPosicion.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Zoo
 39089>Send StartWebApp of oWebApp
 39090>
 Summary
-Memory Available: 4757032960
+Memory Available: 4162867200
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25635
@@ -3517,6 +3517,6 @@ Total Resources: 0
 Total Commands : 39089
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 487231
+Static Data    : 487379
 Message area   : 262450
-Total Blocks   : 17380
+Total Blocks   : 17381

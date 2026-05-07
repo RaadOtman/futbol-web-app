@@ -62,10 +62,6 @@ Object oSelectPosicion is a cWebView
 
         End_Object 
 
-// ToDo: Fill in the from-parent child Select view object name for navigate forward
-//        WebRegisterPath ntNavigateForward oSelectView
-
-//Añado esto, fix error al seleccionar posicion:
 WebRegisterPath ntNavigateForward oZoomPosicion
 
         Procedure OnRowClick String sRowId

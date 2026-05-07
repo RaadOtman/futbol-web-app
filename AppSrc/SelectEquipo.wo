@@ -76,10 +76,6 @@ Object oSelectEquipo is a cWebView
 
 
 
-// ToDo: Fill in the from-parent child Select view object name for navigate forward
-//        WebRegisterPath ntNavigateForward oSelectView
-
-//Añado esto, fix error al seleccionar equipo:
 WebRegisterPath ntNavigateForward oZoomEquipo
 
         Procedure OnRowClick String sRowId
