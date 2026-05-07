@@ -27,7 +27,7 @@ Object oDashboard is a cWebView
     // constraints in the next view that we navigate to.
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-    Set piMaxWidth to 1024
+    Set piMaxWidth to 1600
     
     Set psCaption to "Dashboard"
     Set peViewType to vtUndefined
@@ -44,34 +44,65 @@ Object oDashboard is a cWebView
         WebSetResponsive piColumnCount rmTabletPortrait to 16
     
         Object oTiles_grp is a cWebGroup
-            Set piColumnSpan to 8
-            Set pbShowBorder to False
-            Set pbShowCaption to False
-            Set piColumnCount to 12
-            
+            Set piColumnIndex to 0
+            Set piColumnSpan to 36
+            Set pbShowBorder to True
+            Set pbShowCaption to True
+            Set psCaption to "Grupo Principal"
+            Set piColumnCount to 137
             Set psCSSClass to "TilesGroup"
-    
+
             Object oWelcomeTile is a cWebHtmlBox
-                Set piColumnSpan to 6
-                Set psCSSClass to "Tile Light"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">👋 Welcome</div><div class="Tile_Subtitle">Panel principal del sistema</div></div>'
-    
-                Procedure OnLoad
-                    Send UpdateHTML ('<div class="WebCon_Sizer">' + ;
-                                     '<div class="Tile_Title">Welcome</div>' +;
-                                     '<div class="Tile_Subtitle">' - htmlEncode(psUserName(ghoWebSessionManager)) - '</div>' +;
-                                     '</div>')
-                End_Procedure
+                Set piColumnIndex to 2
+                Set piColumnSpan to 25
+                Set psCSSClass to "Tile"
+                Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#0f172a,#1e293b);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">👋 Welcome</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Admin</div></div>'
+
+                //Procedure OnLoad
+                    //Send UpdateHTML ('<div class="WebCon_Sizer">' + ;
+                                     //'<div class="Tile_Title">Welcome</div>' +;
+                                     //'<div class="Tile_Subtitle">' - htmlEncode(psUserName(ghoWebSessionManager)) - '</div>' +;
+                                     //'</div>')
+                //End_Procedure
                 
             End_Object
-    
+
+            Object oTileLiga is a cWebHtmlBox
+               Set pbServerOnClick to True
+               Set piColumnSpan to 49
+               Set piColumnIndex to 27
+               Set psCSSClass to "Tile"
+               Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#92400e,#f59e0b);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🏆 Ligas</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Competiciones disponibles</div></div>'
+           
+               WebRegisterPath ntNavigateForwardCustom oSelectLiga
+               
+               Procedure OnClick String sId String sParam
+                   Send NavigatePath
+               End_Procedure
+               
+           End_Object
+
+           Object oTileEquipo is a cWebHtmlBox
+               Set pbServerOnClick to True
+               Set piColumnSpan to 53
+               Set piColumnIndex to 78
+               Set psCSSClass to "Tile"
+               Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#14532d,#16a34a);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">⚽ Equipos</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Administrar equipos</div></div>'
+   
+               WebRegisterPath ntNavigateForwardCustom oSelectEquipo
+               
+               Procedure OnClick String sId String sParam
+                   Send NavigatePath
+               End_Procedure
+               
+           End_Object
+
             Object oTileEntrenador is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set piColumnIndex to 6
-                Set psCSSClass to "Tile LightAlternate"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">🧑‍🏫 Entrenadores</div><div class="Tile_Subtitle">Gestionar entrenadores</div></div>'
-                                
+                Set piColumnSpan to 34
+                Set piColumnIndex to 19
+                Set psCSSClass to "Tile"
+                Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#1d4ed8,#2563eb);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🧑‍🏫 Entrenadores</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Gestionar entrenadores</div></div>'
                 WebRegisterPath ntNavigateForwardCustom oSelectEntrenador
                 
                 Procedure OnClick String sId String sParam
@@ -79,27 +110,13 @@ Object oDashboard is a cWebView
                 End_Procedure
                 
             End_Object
-    
-            Object oTileEquipo is a cWebHtmlBox
-                Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set psCSSClass to "Tile Dark"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">⚽ Equipos</div><div class="Tile_Subtitle">Administrar equipos</div></div>'
-    
-                WebRegisterPath ntNavigateForwardCustom oSelectEquipo
-                
-                Procedure OnClick String sId String sParam
-                    Send NavigatePath
-                End_Procedure
-                
-            End_Object
-    
+
             Object oTileJugador is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set piColumnIndex to 6
-                Set psCSSClass to "Tile DarkAlternate"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">🔥 Jugadores</div><div class="Tile_Subtitle">Control de jugadores</div></div>'
+                Set piColumnSpan to 27
+                Set piColumnIndex to 77
+                Set psCSSClass to "Tile"
+                Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#9a3412,#ea580c);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🔥 Jugadores</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Control de jugadores</div></div>'
             
                 WebRegisterPath ntNavigateForwardCustom oSelectJugador
                 
@@ -108,12 +125,13 @@ Object oDashboard is a cWebView
                 End_Procedure
                 
             End_Object
-            
+
             Object oTilePosicion is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set psCSSClass to "Tile DarkAlternate"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">🛡️ Posiciones</div><div class="Tile_Subtitle">Roles en el campo</div></div>'
+                Set piColumnSpan to 28
+                Set piColumnIndex to 105
+                Set psCSSClass to "Tile"
+                Set psHtml to '<div class="WebCon_Sizer" style="background:linear-gradient(135deg,#7e22ce,#c026d3);color:white;min-height:130px;padding:22px;border-radius:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 14px 30px rgba(0,0,0,.30);overflow:hidden;"><div style="font-size:24px;font-weight:800;line-height:1.1;margin-bottom:8px;text-align:center;width:100%;">🛡️ Posiciones</div><div style="font-size:14px;opacity:.85;text-align:center;line-height:1.3;width:100%;">Roles en el campo</div></div>'
             
                 WebRegisterPath ntNavigateForwardCustom oSelectPosicion
                 
@@ -122,21 +140,6 @@ Object oDashboard is a cWebView
                 End_Procedure
                 
              End_Object
-                        
-             Object oTileLiga is a cWebHtmlBox
-                Set pbServerOnClick to True
-                Set piColumnSpan to 6
-                Set piColumnIndex to 6
-                Set psCSSClass to "Tile DarkAlternate"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Title">🏆 Ligas</div><div class="Tile_Subtitle">Competiciones disponibles</div></div>'
-            
-                WebRegisterPath ntNavigateForwardCustom oSelectLiga
-                
-                Procedure OnClick String sId String sParam
-                    Send NavigatePath
-                End_Procedure
-                
-            End_Object
         End_Object
     
     End_Object
