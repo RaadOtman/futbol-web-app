@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
-Memory Available: 4168421376
+Memory Available: 4155838464
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -1763,10 +1763,6 @@ Including file: hijoentrenador.fd    (C:\DataFlex Projects\FutbolWebApp\DDSrc\hi
 37623>>>
 37623>>>
 37623>>>
-37623>>>// ToDo: Fill in the from-parent child Select view object name for navigate forward
-37623>>>//        WebRegisterPath ntNavigateForward oSelectView
-37623>>>
-37623>>>//Añado esto, fix error al seleccionar entrenador:
 37623>>>WebRegisterPath ntNavigateForward oZoomEntrenador
 37629>>>
 37629>>>        Procedure OnRowClick String sRowId
@@ -2139,10 +2135,6 @@ Including file: SelectLiga.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Selec
 37944>>>
 37944>>>
 37944>>>
-37944>>>// ToDo: Fill in the from-parent child Select view object name for navigate forward
-37944>>>//        WebRegisterPath ntNavigateForward oSelectView
-37944>>>
-37944>>>//Añado esto, fix error al seleccionar liga:
 37944>>>WebRegisterPath ntNavigateForward oZoomLiga
 37950>>>
 37950>>>        Procedure OnRowClick String sRowId
@@ -2488,10 +2480,6 @@ Including file: SelectEquipo.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Sel
 38235>>>
 38235>>>
 38235>>>
-38235>>>// ToDo: Fill in the from-parent child Select view object name for navigate forward
-38235>>>//        WebRegisterPath ntNavigateForward oSelectView
-38235>>>
-38235>>>//Añado esto, fix error al seleccionar equipo:
 38235>>>WebRegisterPath ntNavigateForward oZoomEquipo
 38241>>>
 38241>>>        Procedure OnRowClick String sRowId
@@ -2881,10 +2869,6 @@ Including file: jugadorposicion.fd    (C:\DataFlex Projects\FutbolWebApp\DDSrc\j
 38567>>>
 38567>>>
 38567>>>
-38567>>>// ToDo: Fill in the from-parent child Select view object name for navigate forward
-38567>>>//        WebRegisterPath ntNavigateForward oSelectView
-38567>>>
-38567>>>//Añado esto, fix error al seleccionar jugador:
 38567>>>WebRegisterPath ntNavigateForward oZoomJugador
 38573>>>
 38573>>>        Procedure OnRowClick String sRowId
@@ -3257,10 +3241,6 @@ Including file: posicion.fd    (C:\DataFlex Projects\FutbolWebApp\DDSrc\posicion
 38883>>>
 38883>>>        End_Object 
 38884>>>
-38884>>>// ToDo: Fill in the from-parent child Select view object name for navigate forward
-38884>>>//        WebRegisterPath ntNavigateForward oSelectView
-38884>>>
-38884>>>//Añado esto, fix error al seleccionar posicion:
 38884>>>WebRegisterPath ntNavigateForward oZoomPosicion
 38890>>>
 38890>>>        Procedure OnRowClick String sRowId
@@ -3509,7 +3489,7 @@ Including file: ZoomPosicion.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Zoo
 39089>Send StartWebApp of oWebApp
 39090>
 Summary
-Memory Available: 4162867200
+Memory Available: 4156284928
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25635
