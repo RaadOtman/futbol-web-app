@@ -1,19 +1,35 @@
-# DataFlex temporales/sesiones
+# Archivos temporales DataFlex
 Data/WebAppSession.dat
 Data/webappsession.k1
 Data/webappsession.k2
 Data/webappsession.k3
 Data/Filelist.cfg
 
+# Temporales
 *.k1
 *.k2
 *.k3
 *.tmp
 *.log
+*.prn
+*.dbg
+*.dep
 
-# Sistema
+# Carpeta Programs
+Programs/*.exe
+Programs/*.manifest
+Programs/*.cfg
+
+# Archivos generados en AppSrc
+AppSrc/*.prn
+AppSrc/*.dbg
+AppSrc/*.dep
+
+# Mac
 .DS_Store
+
+# Windows
 Thumbs.db
 
-# IDE
+# VS Code
 .vscode/
