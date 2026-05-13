@@ -8,16 +8,18 @@ Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebColumnButton.pkg
 Use cWebColumn.pkg
+Use cWebHtmlBox.pkg
 
 Use cligaDataDictionary.dd
 
 Object oSelectLiga is a cWebView
-    Set psCaption to "SelectLiga"
+    Set psCaption to "Ligas"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
     Set pbShowCaption to False
     Set piMaxWidth to 1024
+    Set psCSSClass to "SelectView SelectLigaView"
 
     Object oliga_DD is a cligaDataDictionary
     End_Object 
@@ -26,37 +28,43 @@ Object oSelectLiga is a cWebView
     Set Server  to oliga_DD
 
 
+    Object oSelectHeader is a cWebHtmlBox
+        Set piColumnSpan to 0
+        Set psCSSClass to "ModuleHeader SelectHeader"
+        Set psHtml to '<section class="ModuleHeaderCard"><div><span class="ModuleEyebrow">Competicion</span><h1>Ligas</h1><p>Consulta y administra las competiciones disponibles para organizar la estructura deportiva.</p></div><div class="ModuleHeaderBadge">Listado</div></section>'
+    End_Object
+
     Object oList is a cWebList
         Set piColumnSpan to 0
-        Set psCSSClass to "MobileList"
+        Set psCSSClass to "MobileList SelectList ModuleList"
         Set pbServerOnRowClick to True
         Set pbFillHeight to True
-        Set pbShowHeader to False
+        Set pbShowHeader to True
         Set piSortColumn to 0
 
         Object oligaNombre is a cWebColumn
             Entry_Item liga.Nombre
-            Set psCaption to "liga.Nombre"
+            Set psCaption to "Liga"
             Set piWidth to 500
         End_Object 
         
                 Object oligaPais is a cWebColumn
             Entry_Item liga.Pais
-            Set psCaption to "liga.Pais"
+            Set psCaption to "Pais"
             Set piWidth to 300
             Set pbNewLine to False
         End_Object 
 
         Object oligaEquipos is a cWebColumn
             Entry_Item liga.Equipos
-            Set psCaption to "liga.Equipos"
+            Set psCaption to "Equipos"
             Set piWidth to 200
             Set pbNewLine to False
         End_Object 
 
         Object oligaEquiposMax is a cWebColumn
             Entry_Item liga.EquiposMax
-            Set psCaption to "liga.EquiposMax"
+            Set psCaption to "Maximo"
             Set piWidth to 200
             Set pbNewLine to False
         End_Object 
@@ -124,7 +132,7 @@ WebRegisterPath ntNavigateForward oZoomLiga
 
         Object oSearch is a cWebMenuItem
             Set psCSSClass to "WebPromptMenuItem"
-            Set psCaption to "Search"
+            Set psCaption to "Buscar"
 
             Procedure OnClick
                 Send Search of oList
@@ -134,7 +142,7 @@ WebRegisterPath ntNavigateForward oZoomLiga
 
         Object oNewButton is a cWebMenuItem
             Set psCSSClass to "WebClearMenuItem"
-            Set psCaption to "New"
+            Set psCaption to "Nueva liga"
 
 
             WebRegisterPath ntNavigateForward oZoomLiga

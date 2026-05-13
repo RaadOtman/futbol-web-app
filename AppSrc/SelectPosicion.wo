@@ -8,16 +8,18 @@ Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebColumnButton.pkg
 Use cWebColumn.pkg
+Use cWebHtmlBox.pkg
 
 Use cposicionDataDictionary.dd
 
 Object oSelectPosicion is a cWebView
-    Set psCaption to "SelectPosicion"
+    Set psCaption to "Posiciones"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
     Set pbShowCaption to False
     Set piMaxWidth to 1024
+    Set psCSSClass to "SelectView SelectPosicionView"
 
     Object oposicion_DD is a cposicionDataDictionary
     End_Object 
@@ -26,17 +28,23 @@ Object oSelectPosicion is a cWebView
     Set Server  to oposicion_DD
 
 
+    Object oSelectHeader is a cWebHtmlBox
+        Set piColumnSpan to 0
+        Set psCSSClass to "ModuleHeader SelectHeader"
+        Set psHtml to '<section class="ModuleHeaderCard"><div><span class="ModuleEyebrow">Campo</span><h1>Posiciones</h1><p>Define los roles disponibles para organizar jugadores y estructura tactica.</p></div><div class="ModuleHeaderBadge">Listado</div></section>'
+    End_Object
+
     Object oList is a cWebList
         Set piColumnSpan to 0
-        Set psCSSClass to "MobileList"
+        Set psCSSClass to "MobileList SelectList ModuleList"
         Set pbServerOnRowClick to True
         Set pbFillHeight to True
-        Set pbShowHeader to False
+        Set pbShowHeader to True
         Set piSortColumn to 0
 
         Object oposicionNombre is a cWebColumn
             Entry_Item posicion.Nombre
-            Set psCaption to "posicion.Nombre"
+            Set psCaption to "Posicion"
             Set piWidth to 500
         End_Object 
 
@@ -101,7 +109,7 @@ WebRegisterPath ntNavigateForward oZoomPosicion
 
         Object oSearch is a cWebMenuItem
             Set psCSSClass to "WebPromptMenuItem"
-            Set psCaption to "Search"
+            Set psCaption to "Buscar"
 
             Procedure OnClick
                 Send Search of oList
@@ -111,7 +119,7 @@ WebRegisterPath ntNavigateForward oZoomPosicion
 
         Object oNewButton is a cWebMenuItem
             Set psCSSClass to "WebClearMenuItem"
-            Set psCaption to "New"
+            Set psCaption to "Nueva posicion"
 
 
             WebRegisterPath ntNavigateForward oZoomPosicion

@@ -8,18 +8,20 @@ Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebColumnButton.pkg
 Use cWebColumn.pkg
+Use cWebHtmlBox.pkg
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
 Use centrenadorDataDictionary.dd
 
 Object oSelectEntrenador is a cWebView
-    Set psCaption to "SelectEntrenador"
+    Set psCaption to "Entrenadores"
     Set peWebViewStyle to wvsDrilldown
     Set peViewType to vtSelect
     Set piColumnCount to 12
     Set pbShowCaption to False
     Set piMaxWidth to 1024
+    Set psCSSClass to "SelectView SelectEntrenadorView"
 
     Object oliga_DD is a cligaDataDictionary
     End_Object 
@@ -36,37 +38,43 @@ Object oSelectEntrenador is a cWebView
     Set Server  to oentrenador_DD
 
 
+    Object oSelectHeader is a cWebHtmlBox
+        Set piColumnSpan to 0
+        Set psCSSClass to "ModuleHeader SelectHeader"
+        Set psHtml to '<section class="ModuleHeaderCard"><div><span class="ModuleEyebrow">Staff tecnico</span><h1>Entrenadores</h1><p>Administra perfiles de entrenadores, nacionalidad y vinculacion con equipos.</p></div><div class="ModuleHeaderBadge">Listado</div></section>'
+    End_Object
+
     Object oList is a cWebList
         Set piColumnSpan to 0
-        Set psCSSClass to "MobileList"
+        Set psCSSClass to "MobileList SelectList ModuleList"
         Set pbServerOnRowClick to True
         Set pbFillHeight to True
-        Set pbShowHeader to False
+        Set pbShowHeader to True
         Set piSortColumn to 0
 
         Object oentrenadorNombre is a cWebColumn
             Entry_Item entrenador.Nombre
-            Set psCaption to "entrenador.Nombre"
+            Set psCaption to "Nombre"
             Set piWidth to 600
         End_Object 
 
         Object oentrenadorApellido is a cWebColumn
             Entry_Item entrenador.Apellido
-            Set psCaption to "entrenador.Apellido"
+            Set psCaption to "Apellido"
             Set piWidth to 600
             Set pbNewLine to False
         End_Object 
         
         Object oentrenadorNacionalidad is a cWebColumn
             Entry_Item entrenador.Nacionalidad
-            Set psCaption to "entrenador.Nacionalidad"
+            Set psCaption to "Nacionalidad"
             Set piWidth to 500
             Set pbNewLine to False
         End_Object 
 
         Object oequipoID is a cWebColumn
             Entry_Item equipo.ID
-            Set psCaption to "entrenador.EquipoID"
+            Set psCaption to "Equipo"
             Set piWidth to 100
             Set pbNewLine to False
         End_Object 
@@ -134,7 +142,7 @@ WebRegisterPath ntNavigateForward oZoomEntrenador
 
         Object oSearch is a cWebMenuItem
             Set psCSSClass to "WebPromptMenuItem"
-            Set psCaption to "Search"
+            Set psCaption to "Buscar"
 
             Procedure OnClick
                 Send Search of oList
@@ -144,7 +152,7 @@ WebRegisterPath ntNavigateForward oZoomEntrenador
 
         Object oNewButton is a cWebMenuItem
             Set psCSSClass to "WebClearMenuItem"
-            Set psCaption to "New"
+            Set psCaption to "Nuevo entrenador"
 
 
             WebRegisterPath ntNavigateForward oZoomEntrenador
