@@ -5101,179 +5101,176 @@ width: 21px;*/
 
 .Dashboard.WebInlineView > div.WebContainer,
 .Dashboard .WebInlineView > div.WebContainer {
-    padding-top: 28px;
+    padding-top: 20px;
 }
 
 .DashboardHero > .WebCon_Inner {
-    margin: 0 7px 8px 7px;
+    margin: 0 7px 12px 7px;
 }
 
-.DashboardHeroCard {
-    min-height: 210px;
-    padding: 28px;
-    border-radius: 18px;
-    border: 1px solid rgba(56, 189, 248, 0.24);
-    background:
-        linear-gradient(135deg, rgba(56, 189, 248, 0.20), transparent 38%),
-        linear-gradient(315deg, rgba(34, 197, 94, 0.16), transparent 42%),
-        linear-gradient(135deg, #111C2E 0%, #0B1120 62%, #020617 100%);
-    box-shadow: 0 22px 52px rgba(2, 6, 23, 0.40);
-    color: var(--df-Grayscale8);
+.ClubOpsHeader {
+    min-height: 116px;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: #0B1120;
+    box-shadow: 0 14px 34px rgba(2, 6, 23, 0.28);
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    overflow: hidden;
+    gap: 18px;
     position: relative;
+    overflow: hidden;
 }
 
-.DashboardHeroCard:before {
+.ClubOpsHeader:before {
     content: '';
     position: absolute;
-    width: 360px;
-    height: 360px;
-    right: -120px;
-    top: -130px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
+    inset: 0;
+    border-left: 4px solid var(--ot-SportGreen);
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.10), transparent 34%);
+    pointer-events: none;
 }
 
-.DashboardHeroCard:after {
-    content: '';
-    position: absolute;
-    right: 34px;
-    bottom: 28px;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    border: 2px solid rgba(56, 189, 248, 0.22);
-    box-shadow: inset 0 0 0 24px rgba(255, 255, 255, 0.03);
-}
-
-.DashboardHero_Content,
-.DashboardHero_Meta {
+.ClubOpsTitle,
+.ClubOpsStats {
     position: relative;
     z-index: 1;
 }
 
-.DashboardHero_Eyebrow {
+.ClubOpsTitle span {
     color: var(--ot-SportGreen);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.DashboardHeroCard h1 {
-    margin: 0;
-    max-width: 720px;
-    font-size: 2.35rem;
-    line-height: 1.05;
+    display: block;
+    font-size: 0.72rem;
     font-weight: 900;
     letter-spacing: 0;
+    margin-bottom: 7px;
+    text-transform: uppercase;
 }
 
-.DashboardHeroCard p {
-    max-width: 620px;
-    margin: 14px 0 0 0;
-    color: var(--df-Grayscale2);
-    font-size: 1rem;
-    line-height: 1.55;
+.ClubOpsTitle h1 {
+    color: var(--df-Grayscale8);
+    font-size: 1.42rem;
+    font-weight: 900;
+    line-height: 1.08;
+    margin: 0;
 }
 
-.DashboardHero_Meta {
+.ClubOpsTitle p {
+    color: var(--df-Grayscale3);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    margin: 8px 0 0 0;
+    max-width: 540px;
+}
+
+.ClubOpsStats {
     display: grid;
-    grid-template-columns: repeat(2, minmax(118px, 1fr));
-    gap: 10px;
-    min-width: 270px;
+    grid-template-columns: repeat(5, minmax(78px, 1fr));
+    gap: 8px;
+    min-width: 520px;
 }
 
-.DashboardHero_Meta div {
-    padding: 16px;
-    border-radius: 14px;
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    background: rgba(15, 23, 42, 0.62);
-    backdrop-filter: blur(10px);
+.ClubOpsStats div {
+    min-height: 66px;
+    padding: 11px 10px;
+    border-radius: 11px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    background: rgba(15, 23, 42, 0.72);
 }
 
-.DashboardHero_Meta strong,
-.DashboardHero_Meta span {
+.ClubOpsStats strong,
+.ClubOpsStats span {
     display: block;
 }
 
-.DashboardHero_Meta strong {
+.ClubOpsStats strong {
     color: var(--df-Grayscale8);
-    font-size: 1.45rem;
+    font-size: 1.15rem;
+    font-weight: 900;
     line-height: 1;
 }
 
-.DashboardHero_Meta span {
+.ClubOpsStats span {
     color: var(--df-Grayscale3);
-    font-size: 0.82rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    margin-top: 9px;
+    text-transform: uppercase;
+}
+
+.TilesGroup {
     margin-top: 8px;
 }
 
+.TilesGroup:before {
+    content: 'Modulos de gestion';
+    display: block;
+    margin: 0 7px 8px 7px;
+    padding: 0 0 0 2px;
+    color: var(--df-Grayscale3);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
 .DashboardTile.Tile .WebCon_Sizer {
-    min-height: 154px;
+    min-height: 112px;
     height: auto;
-    padding: 20px;
-    margin: 7px;
+    padding: 16px;
+    margin: 6px 7px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    justify-content: flex-start;
     isolation: isolate;
+    background: #0F172A;
+    border: 1px solid rgba(148, 163, 184, 0.17);
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(2, 6, 23, 0.20);
+    transition: background-color var(--ot-Transition), border-color var(--ot-Transition), box-shadow var(--ot-Transition), transform var(--ot-Transition);
+}
+
+.DashboardTile.Tile .WebCon_Sizer:hover {
+    background: #111C2E;
+    border-color: rgba(56, 189, 248, 0.30);
+    box-shadow: 0 16px 34px rgba(2, 6, 23, 0.28);
+    transform: translateY(-1px);
+}
+
+.DashboardTile.Tile .WebCon_Sizer:before {
+    display: none;
 }
 
 .DashboardTile.Tile .WebCon_Sizer:after {
-    content: '';
-    position: absolute;
-    right: 18px;
-    top: 18px;
-    width: 42px;
-    height: 42px;
+    display: none;
+}
+
+.DashboardTile .ModuleIcon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    z-index: 0;
-    color: var(--df-Grayscale8);
+    border: 1px solid rgba(56, 189, 248, 0.22);
+    background: rgba(56, 189, 248, 0.08);
+    color: var(--ot-Accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.86rem;
+    font-size: 0.82rem;
     font-weight: 900;
     letter-spacing: 0;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    transition: border-color var(--ot-Transition), background-color var(--ot-Transition), transform var(--ot-Transition);
+    transition: background-color var(--ot-Transition), border-color var(--ot-Transition), color var(--ot-Transition);
 }
 
-.DashboardTile.Tile .WebCon_Sizer:hover:after {
+.DashboardTile.Tile .WebCon_Sizer:hover .ModuleIcon {
     background: rgba(56, 189, 248, 0.16);
-    border-color: rgba(56, 189, 248, 0.34);
-    transform: scale(1.04);
+    border-color: rgba(56, 189, 248, 0.38);
+    color: var(--df-Grayscale8);
 }
 
-.DashboardTile.TileLiga .WebCon_Sizer:after {
-    content: 'LG';
-}
-
-.DashboardTile.TileEquipo .WebCon_Sizer:after {
-    content: 'EQ';
-}
-
-.DashboardTile.TileEntrenador .WebCon_Sizer:after {
-    content: 'ST';
-}
-
-.DashboardTile.TileJugador .WebCon_Sizer:after {
-    content: '11';
-}
-
-.DashboardTile.TilePosicion .WebCon_Sizer:after {
-    content: 'PX';
-}
-
+.DashboardTile .ModuleCopy,
 .DashboardTile.Tile .Tile_Kicker,
 .DashboardTile.Tile .Tile_Title,
 .DashboardTile.Tile .Tile_Subtitle,
@@ -5282,9 +5279,14 @@ width: 21px;*/
     z-index: 1;
 }
 
+.DashboardTile .ModuleCopy {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
 .DashboardTile.Tile .Tile_Kicker {
-    color: var(--ot-Accent);
-    font-size: 0.76rem;
+    color: var(--df-Grayscale3);
+    font-size: 0.70rem;
     font-weight: 800;
     letter-spacing: 0;
     text-transform: uppercase;
@@ -5293,79 +5295,99 @@ width: 21px;*/
 .DashboardTile.Tile .Tile_Title {
     top: auto;
     width: 100%;
-    margin-top: 14px;
+    margin-top: 4px;
     text-align: left;
-    font-size: 1.55rem;
+    font-size: 1.05rem;
     line-height: 1.1;
     white-space: normal;
+    color: var(--df-Grayscale8);
 }
 
 .DashboardTile.Tile .Tile_Subtitle {
     top: auto;
     width: 100%;
-    margin-top: 8px;
+    margin-top: 6px;
     text-align: left;
-    line-height: 1.4;
+    line-height: 1.35;
     color: var(--df-Grayscale3);
     white-space: normal;
+    font-size: 0.86rem;
 }
 
 .DashboardTile.Tile .Tile_Action {
-    margin-top: 16px;
-    color: var(--df-Grayscale8);
-    font-size: 0.86rem;
+    flex: 0 0 auto;
+    margin: 0 0 0 8px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(56, 189, 248, 0.20);
+    background: rgba(56, 189, 248, 0.07);
+    color: var(--ot-Accent);
+    font-size: 0.76rem;
     font-weight: 800;
+    white-space: nowrap;
+    transition: background-color var(--ot-Transition), color var(--ot-Transition), border-color var(--ot-Transition);
+}
+
+.DashboardTile.Tile .WebCon_Sizer:hover .Tile_Action {
+    background: rgba(34, 197, 94, 0.10);
+    border-color: rgba(34, 197, 94, 0.26);
+    color: var(--ot-SportGreen);
 }
 
 .DashboardTile.Tile .Tile_Action:after {
-    content: ' ->';
-    color: var(--ot-Accent);
+    content: '';
 }
 
 .DashboardTile.TileLiga .WebCon_Sizer {
-    background: linear-gradient(145deg, rgba(245, 158, 11, 0.20), rgba(17, 28, 46, 0.96) 44%, #0B1120 100%);
+    border-left: 3px solid rgba(245, 158, 11, 0.70);
 }
 
 .DashboardTile.TileEquipo .WebCon_Sizer {
-    background: linear-gradient(145deg, rgba(34, 197, 94, 0.20), rgba(17, 28, 46, 0.96) 44%, #0B1120 100%);
+    border-left: 3px solid rgba(34, 197, 94, 0.72);
 }
 
 .DashboardTile.TileEntrenador .WebCon_Sizer {
-    background: linear-gradient(145deg, rgba(37, 99, 235, 0.24), rgba(17, 28, 46, 0.96) 44%, #0B1120 100%);
+    border-left: 3px solid rgba(37, 99, 235, 0.72);
 }
 
 .DashboardTile.TileJugador .WebCon_Sizer {
-    background: linear-gradient(145deg, rgba(249, 115, 22, 0.20), rgba(17, 28, 46, 0.96) 44%, #0B1120 100%);
+    border-left: 3px solid rgba(14, 165, 233, 0.72);
 }
 
 .DashboardTile.TilePosicion .WebCon_Sizer {
-    background: linear-gradient(145deg, rgba(192, 38, 211, 0.20), rgba(17, 28, 46, 0.96) 44%, #0B1120 100%);
+    border-left: 3px solid rgba(148, 163, 184, 0.56);
 }
 
-.df-ModeTablet .DashboardHeroCard,
-.df-ModeMobile .DashboardHeroCard {
+.df-ModeTablet .ClubOpsHeader,
+.df-ModeMobile .ClubOpsHeader {
     min-height: 0;
-    padding: 22px;
+    padding: 16px;
     display: block;
 }
 
-.df-ModeTablet .DashboardHero_Meta,
-.df-ModeMobile .DashboardHero_Meta {
-    margin-top: 20px;
+.df-ModeTablet .ClubOpsStats,
+.df-ModeMobile .ClubOpsStats {
+    margin-top: 14px;
     min-width: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.df-ModeMobile .DashboardHeroCard h1 {
-    font-size: 1.7rem;
+.df-ModeMobile .ClubOpsTitle h1 {
+    font-size: 1.28rem;
 }
 
-.df-ModeMobile .DashboardHero_Meta {
-    grid-template-columns: 1fr;
+.df-ModeMobile .ClubOpsStats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .df-ModeMobile .DashboardTile.Tile .WebCon_Sizer {
-    min-height: 148px;
+    min-height: 0;
     margin: 7px 0;
+    align-items: flex-start;
+}
+
+.df-ModeMobile .DashboardTile.Tile .Tile_Action {
+    display: none;
 }
 
 /* Module Select & Zoom Views */
