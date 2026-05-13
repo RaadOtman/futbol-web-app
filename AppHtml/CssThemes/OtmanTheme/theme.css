@@ -192,6 +192,36 @@ textarea::selection {
     background: var(--ot-Accent);
 }
 
+/* Integrated dark scrollbars */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #07111F;
+}
+
+*::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #07111F;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #334155 0%, #1E293B 100%);
+    border: 2px solid #07111F;
+    border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #38BDF8 0%, #2563EB 100%);
+}
+
+*::-webkit-scrollbar-corner {
+    background: #07111F;
+}
+
 a:link {
     color: var(--ot-Accent);
 }
@@ -1035,6 +1065,7 @@ opacity: 0;
     background-color: var(--ot-SurfaceElevated);
     border-radius: var(--ot-Radius);
     overflow: hidden;
+    scrollbar-gutter: stable;
 }
 
 .WebGrid .WebList_Body,
@@ -1052,6 +1083,7 @@ opacity: 0;
     border: var(--df-RowBorderWidth) var(--df-RowBorderStyle) var(--ot-Border);
     border-width: var(--df-RowBorderTop) var(--df-RowBorderRight) var(--df-RowBorderBottom) var(--df-RowBorderLeft);
     padding: var(--df-RowBorderPadding);
+    transition: background-color var(--ot-Transition), border-color var(--ot-Transition), box-shadow var(--ot-Transition);
 }
 
 .WebList_Row{
@@ -1085,8 +1117,8 @@ opacity: 0;
 
 .WebGrid .WebList_Body .WebList_Row td,
 .WebList .WebList_Body .WebList_Row td {
-    padding: 6px 6px 6px;
-    height: 17px;
+    padding: 8px 10px;
+    height: 32px;
     vertical-align: middle;
     
     border: var(--df-CelBorderWidth) var(--df-CelBorderStyle) var(--ot-Border);
@@ -1181,7 +1213,7 @@ opacity: 0;
 .WebList .WebList_Head .WebList_ColCap {
     overflow: hidden;
     white-space: break-spaces;
-    padding: 10px 4px 6px;
+    padding: 9px 10px 7px;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
@@ -1221,7 +1253,7 @@ opacity: 0;
 .WebGrid > div > div > div > div > .WebList_Body.WebList_ShowSelected > div > div > .WebList_Row.WebList_Selected,
 .WebList > div > div > div > div > .WebList_Body.WebList_ShowSelected > div > div > .WebList_Row.WebList_Selected {
 
-    background-color: rgba(37, 99, 235, 0.18);
+    background-color: rgba(37, 99, 235, 0.16);
     border-left: 3px solid var(--ot-Accent);
 }
 
@@ -5073,19 +5105,19 @@ width: 21px;*/
 }
 
 .DashboardHero > .WebCon_Inner {
-    margin: 0 7px 10px 7px;
+    margin: 0 7px 8px 7px;
 }
 
 .DashboardHeroCard {
-    min-height: 230px;
-    padding: 30px;
+    min-height: 210px;
+    padding: 28px;
     border-radius: 18px;
     border: 1px solid rgba(56, 189, 248, 0.24);
     background:
         linear-gradient(135deg, rgba(56, 189, 248, 0.20), transparent 38%),
         linear-gradient(315deg, rgba(34, 197, 94, 0.16), transparent 42%),
         linear-gradient(135deg, #111C2E 0%, #0B1120 62%, #020617 100%);
-    box-shadow: 0 26px 60px rgba(2, 6, 23, 0.42);
+    box-shadow: 0 22px 52px rgba(2, 6, 23, 0.40);
     color: var(--df-Grayscale8);
     display: flex;
     align-items: flex-end;
@@ -5183,10 +5215,10 @@ width: 21px;*/
 }
 
 .DashboardTile.Tile .WebCon_Sizer {
-    min-height: 166px;
+    min-height: 154px;
     height: auto;
-    padding: 22px;
-    margin: 8px;
+    padding: 20px;
+    margin: 7px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -5213,6 +5245,13 @@ width: 21px;*/
     font-weight: 900;
     letter-spacing: 0;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: border-color var(--ot-Transition), background-color var(--ot-Transition), transform var(--ot-Transition);
+}
+
+.DashboardTile.Tile .WebCon_Sizer:hover:after {
+    background: rgba(56, 189, 248, 0.16);
+    border-color: rgba(56, 189, 248, 0.34);
+    transform: scale(1.04);
 }
 
 .DashboardTile.TileLiga .WebCon_Sizer:after {
@@ -5254,7 +5293,7 @@ width: 21px;*/
 .DashboardTile.Tile .Tile_Title {
     top: auto;
     width: 100%;
-    margin-top: 18px;
+    margin-top: 14px;
     text-align: left;
     font-size: 1.55rem;
     line-height: 1.1;
@@ -5272,7 +5311,7 @@ width: 21px;*/
 }
 
 .DashboardTile.Tile .Tile_Action {
-    margin-top: 20px;
+    margin-top: 16px;
     color: var(--df-Grayscale8);
     font-size: 0.86rem;
     font-weight: 800;
@@ -5333,23 +5372,23 @@ width: 21px;*/
 
 .SelectView.WebInlineView > div.WebContainer,
 .ZoomView.WebInlineView > div.WebContainer {
-    padding: 26px 20px;
+    padding: 22px 18px;
 }
 
 .ModuleHeader > .WebCon_Inner {
-    margin: 0 7px 14px 7px;
+    margin: 0 7px 10px 7px;
 }
 
 .ModuleHeaderCard {
-    min-height: 146px;
-    padding: 24px 26px;
-    border-radius: 16px;
+    min-height: 124px;
+    padding: 20px 22px;
+    border-radius: 14px;
     border: 1px solid var(--ot-Border);
     background:
         linear-gradient(135deg, rgba(56, 189, 248, 0.16), transparent 42%),
         linear-gradient(315deg, rgba(34, 197, 94, 0.12), transparent 48%),
         linear-gradient(135deg, #111C2E 0%, #0B1120 100%);
-    box-shadow: var(--ot-ShadowSoft);
+    box-shadow: 0 16px 40px rgba(2, 6, 23, 0.30);
     color: var(--df-Grayscale8);
     display: flex;
     align-items: flex-end;
@@ -5360,7 +5399,7 @@ width: 21px;*/
 }
 
 .ModuleHeaderCard.Compact {
-    min-height: 118px;
+    min-height: 104px;
 }
 
 .ModuleHeaderCard:after {
@@ -5393,7 +5432,7 @@ width: 21px;*/
 .ModuleHeaderCard h1 {
     margin: 0;
     color: var(--df-Grayscale8);
-    font-size: 1.75rem;
+    font-size: 1.58rem;
     font-weight: 900;
     line-height: 1.08;
     letter-spacing: 0;
@@ -5401,14 +5440,14 @@ width: 21px;*/
 
 .ModuleHeaderCard p {
     max-width: 620px;
-    margin: 10px 0 0 0;
+    margin: 8px 0 0 0;
     color: var(--df-Grayscale2);
     font-size: 0.96rem;
     line-height: 1.5;
 }
 
 .ModuleHeaderBadge {
-    padding: 10px 13px;
+    padding: 8px 12px;
     border-radius: 999px;
     border: 1px solid rgba(56, 189, 248, 0.30);
     background: rgba(56, 189, 248, 0.10);
@@ -5421,19 +5460,19 @@ width: 21px;*/
 
 .SelectList.WebList.WebControl > .WebCon_Inner,
 .SelectList.WebGrid.WebControl > .WebCon_Inner {
-    margin: 0 7px 12px 7px;
+    margin: 0 7px 10px 7px;
 }
 
 .SelectList .WebList_Focus {
     border: 1px solid var(--ot-Border);
-    border-radius: 16px;
+    border-radius: 14px;
     background: var(--ot-SurfaceElevated);
-    box-shadow: var(--ot-ShadowSoft);
+    box-shadow: 0 14px 34px rgba(2, 6, 23, 0.28);
     overflow: hidden;
 }
 
 .SelectList .WebList_BodyWrp {
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 0 14px 14px;
 }
 
 .SelectList .WebList_Head {
@@ -5441,23 +5480,27 @@ width: 21px;*/
 }
 
 .SelectList .WebList_Head .WebList_ColCap {
-    padding: 13px 14px 10px;
+    padding: 9px 12px 8px;
     color: var(--df-Grayscale2);
+    font-size: 0.73rem;
 }
 
 .SelectList .WebList_Body .WebList_Row {
-    transition: background-color var(--ot-Transition), transform var(--ot-Transition), border-color var(--ot-Transition);
+    border-left-width: 3px;
+    transition: background-color var(--ot-Transition), border-color var(--ot-Transition), box-shadow var(--ot-Transition);
 }
 
 .SelectList .WebList_Body .WebList_Row:hover {
-    background-color: rgba(56, 189, 248, 0.08);
+    background-color: rgba(56, 189, 248, 0.075);
     border-left-color: var(--ot-Accent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025), inset 0 -1px 0 rgba(56, 189, 248, 0.08);
 }
 
 .SelectList .WebList_Body .WebList_Row td {
-    padding: 12px 14px;
+    padding: 9px 12px;
+    height: 36px;
     color: var(--df-Grayscale1);
-    border-bottom: 1px solid var(--ot-Border);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.16);
 }
 
 .SelectList .WebList_Body .WebList_Row td:first-child {
@@ -5467,7 +5510,7 @@ width: 21px;*/
 
 .SelectList .WebButtonIcon:before {
     color: var(--ot-Accent);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .ZoomFormCard.WebPanel > .WebCon_Sizer > .WebCon_Main,
@@ -5481,32 +5524,33 @@ width: 21px;*/
 }
 
 .ZoomFormCard .WebCon_Content {
-    padding: 0 2px 16px 2px;
+    padding: 0 2px 12px 2px;
 }
 
 .ZoomFormCard .WebControl:not(.ModuleHeader) > .WebCon_Inner {
-    margin: 8px 7px;
+    margin: 6px 7px;
 }
 
 .ZoomFormCard .WebForm .WebFrm_Wrapper,
 .ZoomFormCard .WebCombo .WebFrm_Wrapper,
 .ZoomFormCard .WebEdit .WebFrm_Wrapper {
-    min-height: 40px;
+    min-height: 38px;
     border: 1px solid var(--ot-Border);
     background: rgba(15, 23, 42, 0.78);
-    border-radius: 11px;
+    border-radius: 10px;
+    transition: border-color var(--ot-Transition), box-shadow var(--ot-Transition), background-color var(--ot-Transition), transform var(--ot-Transition);
 }
 
 .ZoomFormCard .WebForm input,
 .ZoomFormCard .WebForm .WebDynFrm,
 .ZoomFormCard .WebCombo select {
-    min-height: 36px;
+    min-height: 34px;
     padding-left: 10px;
     color: var(--df-Grayscale8);
 }
 
 .ZoomFormCard .WebControl>div.WebCon_TopLabel>label {
-    min-height: 24px;
+    min-height: 21px;
     color: var(--df-Grayscale2);
     font-size: 0.78rem;
     font-weight: 800;
@@ -5515,7 +5559,8 @@ width: 21px;*/
 
 .ZoomFormCard .WebControl.Web_Enabled.WebCon_Focus>div>div>.WebFrm_Wrapper {
     border-color: var(--ot-Accent);
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+    background: rgba(15, 23, 42, 0.94);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.14), 0 10px 26px rgba(2, 6, 23, 0.24);
 }
 
 .ZoomView .WebInlineView > div > div > div > .WebCon_ContentWrp,
@@ -5528,8 +5573,9 @@ width: 21px;*/
 .WebActionBar.WebToolBar .WebPromptMenuItem,
 .WebActionBar.WebToolBar .WebEditMenuItem,
 .WebActionBar.WebToolBar .WebDeleteMenuItem {
-    border-radius: 10px;
-    transition: background-color var(--ot-Transition), transform var(--ot-Transition);
+    border-radius: 9px;
+    margin: 2px 3px;
+    transition: background-color var(--ot-Transition), transform var(--ot-Transition), box-shadow var(--ot-Transition);
 }
 
 .WebActionBar.WebToolBar .WebSaveMenuItem:hover,
@@ -5538,10 +5584,20 @@ width: 21px;*/
 .WebActionBar.WebToolBar .WebEditMenuItem:hover {
     background-color: rgba(56, 189, 248, 0.12);
     transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(2, 6, 23, 0.20);
 }
 
 .WebActionBar.WebToolBar .WebDeleteMenuItem:hover {
     background-color: rgba(239, 68, 68, 0.14);
+    box-shadow: 0 8px 18px rgba(127, 29, 29, 0.18);
+}
+
+.WebActionBar.WebToolBar ul.WebBarRoot>li>div {
+    min-height: 34px;
+}
+
+.WebActionBar.WebToolBar .WebMenuItem>div>span.WebItm_Icon {
+    border-radius: 9px;
 }
 
 .WebActionBar.WebToolBar .WebSaveMenuItem>div>span.WebItm_Icon:before,
@@ -5578,7 +5634,31 @@ width: 21px;*/
 }
 
 .df-ModeMobile .SelectList .WebList_Body .WebList_Row td {
-    padding: 10px 8px;
+    padding: 8px 7px;
+}
+
+.df-ModeTablet .SelectList .WebList_Body .WebList_Row td {
+    padding: 9px 10px;
+}
+
+.df-ModeTablet .ModuleHeaderCard,
+.df-ModeMobile .ModuleHeaderCard {
+    border-radius: 13px;
+}
+
+.df-ModeTablet .ZoomFormCard .WebControl:not(.ModuleHeader) > .WebCon_Inner,
+.df-ModeMobile .ZoomFormCard .WebControl:not(.ModuleHeader) > .WebCon_Inner {
+    margin: 5px 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *:before,
+    *:after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
 
 /* Latest Activity Group  */

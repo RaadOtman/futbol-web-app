@@ -1,5 +1,5 @@
 Compiling Program: C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
-Memory Available: 4736638976
+Memory Available: 3516059648
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -1483,7 +1483,7 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37365>>>            Set piColumnIndex to 0
 37366>>>            Set piColumnSpan to 24
 37367>>>            Set psCSSClass to "DashboardHero"
-37368>>>            Set psHtml to '<section class="DashboardHeroCard"><div class="DashboardHero_Content"><div class="DashboardHero_Eyebrow">Futbol WebApp</div><h1>Centro de control deportivo</h1><p>Gestiona competiciones, equipos, jugadores, entrenadores y posiciones desde un panel rapido y profesional.</p></div><div class="DashboardHero_Meta"><div><strong>5</strong><span>Modulos activos</span></div><div><strong>24/7</strong><span>Gestion operativa</span></div></div></section>'
+37368>>>            Set psHtml to '<section class="DashboardHeroCard"><div class="DashboardHero_Content"><div class="DashboardHero_Eyebrow">Futbol WebApp</div><h1>Dashboard</h1><p>Gestiona competiciones, equipos, jugadores, entrenadores y posiciones desde un panel rapido y profesional.</p></div><div class="DashboardHero_Meta"><div><strong>5</strong><span>Modulos activos</span></div><div><strong>24/7</strong><span>Gestion operativa</span></div></div></section>'
 37369>>>            WebSetResponsive piColumnSpan rmMobile to 1
 37370>>>            WebSetResponsive piColumnSpan rmTabletPortrait to 16
 37371>>>        End_Object
@@ -3611,7 +3611,7 @@ Including file: ZoomPosicion.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Zoo
 39209>Send StartWebApp of oWebApp
 39210>
 Summary
-Memory Available: 4730064896
+Memory Available: 3541274624
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25637
@@ -3619,6 +3619,6 @@ Total Resources: 0
 Total Commands : 39209
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 490555
+Static Data    : 490539
 Message area   : 264888
 Total Blocks   : 17441
