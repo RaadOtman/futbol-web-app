@@ -47,7 +47,7 @@ Object oDashboard is a cWebView
             Set piColumnIndex to 0
             Set piColumnSpan to 24
             Set psCSSClass to "DashboardHero"
-            Set psHtml to '<section class="DashboardHeroCard"><div class="DashboardHero_Content"><div class="DashboardHero_Eyebrow">Futbol WebApp</div><h1>Dashboard</h1><p>Gestiona competiciones, equipos, jugadores, entrenadores y posiciones desde un panel rapido y profesional.</p></div><div class="DashboardHero_Meta"><div><strong>5</strong><span>Modulos activos</span></div><div><strong>24/7</strong><span>Gestion operativa</span></div></div></section>'
+            Set psHtml to '<section class="ClubOpsHeader"><div class="ClubOpsTitle"><span>Futbol WebApp</span><h1>Panel de gestion deportiva</h1><p>Operativa central para competiciones, clubes, plantilla y estructura tecnica.</p></div><div class="ClubOpsStats"><div><strong>5</strong><span>Ligas</span></div><div><strong>5</strong><span>Equipos</span></div><div><strong>11</strong><span>Jugadores</span></div><div><strong>ST</strong><span>Staff</span></div><div><strong>PX</strong><span>Posiciones</span></div></div></section>'
             WebSetResponsive piColumnSpan rmMobile to 1
             WebSetResponsive piColumnSpan rmTabletPortrait to 16
         End_Object
@@ -66,10 +66,10 @@ Object oDashboard is a cWebView
 
             Object oTileLiga is a cWebHtmlBox
                Set pbServerOnClick to True
-               Set piColumnSpan to 8
+               Set piColumnSpan to 12
                Set piColumnIndex to 0
                Set psCSSClass to "Tile DashboardTile TileLiga"
-               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Competicion</div><div class="Tile_Title">Ligas</div><div class="Tile_Subtitle">Competiciones disponibles</div><div class="Tile_Action">Abrir modulo</div></div>'
+               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">LG</div><div class="ModuleCopy"><div class="Tile_Kicker">Competicion</div><div class="Tile_Title">Ligas</div><div class="Tile_Subtitle">Calendario organizativo y competiciones disponibles.</div></div><div class="Tile_Action">Gestionar</div></div>'
                WebSetResponsive piColumnSpan rmMobile to 1
                WebSetResponsive piColumnIndex rmMobile to 0
                WebSetResponsive piColumnSpan rmTabletPortrait to 8
@@ -85,10 +85,10 @@ Object oDashboard is a cWebView
 
            Object oTileEquipo is a cWebHtmlBox
                Set pbServerOnClick to True
-               Set piColumnSpan to 8
-               Set piColumnIndex to 8
+               Set piColumnSpan to 12
+               Set piColumnIndex to 12
                Set psCSSClass to "Tile DashboardTile TileEquipo"
-               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Clubes</div><div class="Tile_Title">Equipos</div><div class="Tile_Subtitle">Administrar equipos</div><div class="Tile_Action">Abrir modulo</div></div>'
+               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">EQ</div><div class="ModuleCopy"><div class="Tile_Kicker">Clubes</div><div class="Tile_Title">Equipos</div><div class="Tile_Subtitle">Alta y mantenimiento de clubes vinculados a ligas.</div></div><div class="Tile_Action">Gestionar</div></div>'
                WebSetResponsive piColumnSpan rmMobile to 1
                WebSetResponsive piColumnIndex rmMobile to 0
                WebSetResponsive piColumnSpan rmTabletPortrait to 8
@@ -104,10 +104,10 @@ Object oDashboard is a cWebView
 
             Object oTileEntrenador is a cWebHtmlBox
                 Set pbServerOnClick to True
-                Set piColumnSpan to 8
-                Set piColumnIndex to 16
+                Set piColumnSpan to 12
+                Set piColumnIndex to 0
                 Set psCSSClass to "Tile DashboardTile TileEntrenador"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Staff</div><div class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle">Gestionar entrenadores</div><div class="Tile_Action">Abrir modulo</div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">ST</div><div class="ModuleCopy"><div class="Tile_Kicker">Staff tecnico</div><div class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle">Perfiles tecnicos, nacionalidad y equipo asignado.</div></div><div class="Tile_Action">Gestionar</div></div>'
                 WebSetResponsive piColumnSpan rmMobile to 1
                 WebSetResponsive piColumnIndex rmMobile to 0
                 WebSetResponsive piColumnSpan rmTabletPortrait to 8
@@ -123,9 +123,9 @@ Object oDashboard is a cWebView
             Object oTileJugador is a cWebHtmlBox
                 Set pbServerOnClick to True
                 Set piColumnSpan to 12
-                Set piColumnIndex to 0
+                Set piColumnIndex to 12
                 Set psCSSClass to "Tile DashboardTile TileJugador"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Plantilla</div><div class="Tile_Title">Jugadores</div><div class="Tile_Subtitle">Control de jugadores</div><div class="Tile_Action">Abrir modulo</div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">11</div><div class="ModuleCopy"><div class="Tile_Kicker">Plantilla</div><div class="Tile_Title">Jugadores</div><div class="Tile_Subtitle">Control de jugadores y pertenencia deportiva.</div></div><div class="Tile_Action">Gestionar</div></div>'
                 WebSetResponsive piColumnSpan rmMobile to 1
                 WebSetResponsive piColumnIndex rmMobile to 0
                 WebSetResponsive piColumnSpan rmTabletPortrait to 8
@@ -142,9 +142,9 @@ Object oDashboard is a cWebView
             Object oTilePosicion is a cWebHtmlBox
                 Set pbServerOnClick to True
                 Set piColumnSpan to 12
-                Set piColumnIndex to 12
+                Set piColumnIndex to 0
                 Set psCSSClass to "Tile DashboardTile TilePosicion"
-                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Campo</div><div class="Tile_Title">Posiciones</div><div class="Tile_Subtitle">Roles en el campo</div><div class="Tile_Action">Abrir modulo</div></div>'
+                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">PX</div><div class="ModuleCopy"><div class="Tile_Kicker">Campo</div><div class="Tile_Title">Posiciones</div><div class="Tile_Subtitle">Roles tacticos para clasificar la plantilla.</div></div><div class="Tile_Action">Gestionar</div></div>'
                 WebSetResponsive piColumnSpan rmMobile to 1
                 WebSetResponsive piColumnIndex rmMobile to 0
                 WebSetResponsive piColumnSpan rmTabletPortrait to 16

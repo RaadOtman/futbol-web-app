@@ -1,9 +1,13 @@
 Compiling Program: C:\DataFlex Projects\FutbolWebApp\AppSrc\WebApp.src
 <<<<<<< HEAD
+<<<<<<< HEAD
 Memory Available: 3516059648
 =======
 Memory Available: 4506767360
 >>>>>>> feature/navegación
+=======
+Memory Available: 3163246592
+>>>>>>> feature/dashboard_+_tiles
 1>Use AllWebAppClasses.pkg
 Using pre-compiled package ALLWEBAPPCLASSES.PKG
 Including file: AllWebAppClasses.x64.pkd    (C:\Program Files\DataFlex 25.0\Pkg\AllWebAppClasses.x64.pkd)
@@ -1487,7 +1491,7 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37365>>>            Set piColumnIndex to 0
 37366>>>            Set piColumnSpan to 24
 37367>>>            Set psCSSClass to "DashboardHero"
-37368>>>            Set psHtml to '<section class="DashboardHeroCard"><div class="DashboardHero_Content"><div class="DashboardHero_Eyebrow">Futbol WebApp</div><h1>Dashboard</h1><p>Gestiona competiciones, equipos, jugadores, entrenadores y posiciones desde un panel rapido y profesional.</p></div><div class="DashboardHero_Meta"><div><strong>5</strong><span>Modulos activos</span></div><div><strong>24/7</strong><span>Gestion operativa</span></div></div></section>'
+37368>>>            Set psHtml to '<section class="ClubOpsHeader"><div class="ClubOpsTitle"><span>Futbol WebApp</span><h1>Panel de gestion deportiva</h1><p>Operativa central para competiciones, clubes, plantilla y estructura tecnica.</p></div><div class="ClubOpsStats"><div><strong>5</strong><span>Ligas</span></div><div><strong>5</strong><span>Equipos</span></div><div><strong>11</strong><span>Jugadores</span></div><div><strong>ST</strong><span>Staff</span></div><div><strong>PX</strong><span>Posiciones</span></div></div></section>'
 37369>>>            WebSetResponsive piColumnSpan rmMobile to 1
 37370>>>            WebSetResponsive piColumnSpan rmTabletPortrait to 16
 37371>>>        End_Object
@@ -1506,10 +1510,10 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37384>>>
 37384>>>            Object oTileLiga is a cWebHtmlBox
 37386>>>               Set pbServerOnClick to True
-37387>>>               Set piColumnSpan to 8
+37387>>>               Set piColumnSpan to 12
 37388>>>               Set piColumnIndex to 0
 37389>>>               Set psCSSClass to "Tile DashboardTile TileLiga"
-37390>>>               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Competicion</div><div class="Tile_Title">Ligas</div><div class="Tile_Subtitle">Competiciones disponibles</div><div class="Tile_Action">Abrir modulo</div></div>'
+37390>>>               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">LG</div><div class="ModuleCopy"><div class="Tile_Kicker">Competicion</div><div class="Tile_Title">Ligas</div><div class="Tile_Subtitle">Calendario organizativo y competiciones disponibles.</div></div><div class="Tile_Action">Gestionar</div></div>'
 37391>>>               WebSetResponsive piColumnSpan rmMobile to 1
 37392>>>               WebSetResponsive piColumnIndex rmMobile to 0
 37393>>>               WebSetResponsive piColumnSpan rmTabletPortrait to 8
@@ -1525,10 +1529,10 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37407>>>
 37407>>>           Object oTileEquipo is a cWebHtmlBox
 37409>>>               Set pbServerOnClick to True
-37410>>>               Set piColumnSpan to 8
-37411>>>               Set piColumnIndex to 8
+37410>>>               Set piColumnSpan to 12
+37411>>>               Set piColumnIndex to 12
 37412>>>               Set psCSSClass to "Tile DashboardTile TileEquipo"
-37413>>>               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Clubes</div><div class="Tile_Title">Equipos</div><div class="Tile_Subtitle">Administrar equipos</div><div class="Tile_Action">Abrir modulo</div></div>'
+37413>>>               Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">EQ</div><div class="ModuleCopy"><div class="Tile_Kicker">Clubes</div><div class="Tile_Title">Equipos</div><div class="Tile_Subtitle">Alta y mantenimiento de clubes vinculados a ligas.</div></div><div class="Tile_Action">Gestionar</div></div>'
 37414>>>               WebSetResponsive piColumnSpan rmMobile to 1
 37415>>>               WebSetResponsive piColumnIndex rmMobile to 0
 37416>>>               WebSetResponsive piColumnSpan rmTabletPortrait to 8
@@ -1544,10 +1548,10 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37430>>>
 37430>>>            Object oTileEntrenador is a cWebHtmlBox
 37432>>>                Set pbServerOnClick to True
-37433>>>                Set piColumnSpan to 8
-37434>>>                Set piColumnIndex to 16
+37433>>>                Set piColumnSpan to 12
+37434>>>                Set piColumnIndex to 0
 37435>>>                Set psCSSClass to "Tile DashboardTile TileEntrenador"
-37436>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Staff</div><div class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle">Gestionar entrenadores</div><div class="Tile_Action">Abrir modulo</div></div>'
+37436>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">ST</div><div class="ModuleCopy"><div class="Tile_Kicker">Staff tecnico</div><div class="Tile_Title">Entrenadores</div><div class="Tile_Subtitle">Perfiles tecnicos, nacionalidad y equipo asignado.</div></div><div class="Tile_Action">Gestionar</div></div>'
 37437>>>                WebSetResponsive piColumnSpan rmMobile to 1
 37438>>>                WebSetResponsive piColumnIndex rmMobile to 0
 37439>>>                WebSetResponsive piColumnSpan rmTabletPortrait to 8
@@ -1563,9 +1567,9 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37453>>>            Object oTileJugador is a cWebHtmlBox
 37455>>>                Set pbServerOnClick to True
 37456>>>                Set piColumnSpan to 12
-37457>>>                Set piColumnIndex to 0
+37457>>>                Set piColumnIndex to 12
 37458>>>                Set psCSSClass to "Tile DashboardTile TileJugador"
-37459>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Plantilla</div><div class="Tile_Title">Jugadores</div><div class="Tile_Subtitle">Control de jugadores</div><div class="Tile_Action">Abrir modulo</div></div>'
+37459>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">11</div><div class="ModuleCopy"><div class="Tile_Kicker">Plantilla</div><div class="Tile_Title">Jugadores</div><div class="Tile_Subtitle">Control de jugadores y pertenencia deportiva.</div></div><div class="Tile_Action">Gestionar</div></div>'
 37460>>>                WebSetResponsive piColumnSpan rmMobile to 1
 37461>>>                WebSetResponsive piColumnIndex rmMobile to 0
 37462>>>                WebSetResponsive piColumnSpan rmTabletPortrait to 8
@@ -1582,9 +1586,9 @@ Including file: Dashboard.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Dashbo
 37476>>>            Object oTilePosicion is a cWebHtmlBox
 37478>>>                Set pbServerOnClick to True
 37479>>>                Set piColumnSpan to 12
-37480>>>                Set piColumnIndex to 12
+37480>>>                Set piColumnIndex to 0
 37481>>>                Set psCSSClass to "Tile DashboardTile TilePosicion"
-37482>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="Tile_Kicker">Campo</div><div class="Tile_Title">Posiciones</div><div class="Tile_Subtitle">Roles en el campo</div><div class="Tile_Action">Abrir modulo</div></div>'
+37482>>>                Set psHtml to '<div class="WebCon_Sizer" data-ServerOnClick="openview"><div class="ModuleIcon">PX</div><div class="ModuleCopy"><div class="Tile_Kicker">Campo</div><div class="Tile_Title">Posiciones</div><div class="Tile_Subtitle">Roles tacticos para clasificar la plantilla.</div></div><div class="Tile_Action">Gestionar</div></div>'
 37483>>>                WebSetResponsive piColumnSpan rmMobile to 1
 37484>>>                WebSetResponsive piColumnIndex rmMobile to 0
 37485>>>                WebSetResponsive piColumnSpan rmTabletPortrait to 16
@@ -3616,7 +3620,7 @@ Including file: ZoomPosicion.wo    (C:\DataFlex Projects\FutbolWebApp\AppSrc\Zoo
 39209>Send StartWebApp of oWebApp
 39210>
 Summary
-Memory Available: 3541274624
+Memory Available: 3130228736
 Total Warnings : 0
 Total Errors   : 0
 Total Symbols  : 25637
@@ -3624,8 +3628,9 @@ Total Resources: 0
 Total Commands : 39209
 Total Windows  : 0
 Total Pages    : 0
-Static Data    : 490539
+Static Data    : 491051
 Message area   : 264888
+<<<<<<< HEAD
 Total Blocks   : 17441
 =======
 38028>>>
@@ -4930,3 +4935,6 @@ Static Data    : 487567
 Message area   : 262758
 Total Blocks   : 17388
 >>>>>>> feature/navegación
+=======
+Total Blocks   : 17445
+>>>>>>> feature/dashboard_+_tiles
