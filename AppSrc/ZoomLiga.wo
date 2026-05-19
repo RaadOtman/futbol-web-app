@@ -7,15 +7,14 @@ Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
-<<<<<<< HEAD
 Use cWebHtmlBox.pkg
-
-=======
 Use cWebList.pkg
 Use cWebColumn.pkg
 Use cequipoDataDictionary.dd
->>>>>>> feature/navegación
 Use cligaDataDictionary.dd
+
+Use ZoomEquipo.wo
+
 
 Object oZoomLiga is a cWebView
     Set piColumnCount to 12
@@ -67,17 +66,25 @@ Object oZoomLiga is a cWebView
             Set pbFillHeight to False
             Set piMinHeight to 250
             Set pbServerOnShow to True
+            Set pbServerOnRowClick to True
+            
+            WebRegisterPath ntNavigateForward oZoomEquipo
 
+            Procedure OnRowClick String sRowID Integer iColumnIndex
+                Send NavigateForward of oZoomEquipo Self
+            End_Procedure
+            
            Procedure OnShow
                 Forward Send OnShow
                 Send GridRefresh
            End_Procedure
-
+                      
             Object oEquipoNombreCol is a cWebColumn
                 Entry_Item equipo.Nombre
                 Set psCaption to "Equipo"
                 Set piWidth to 100
             End_Object
+            
         End_Object
 
         Object oligaPais is a cWebForm
