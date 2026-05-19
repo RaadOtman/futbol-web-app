@@ -25,6 +25,7 @@ Object oZoomEquipo is a cWebView
     End_Object 
 
     Object oequipo_DD is a cequipoDataDictionary
+        // Relacionamos equipo con liga
         Set DDO_Server to oliga_DD
     End_Object 
 
@@ -38,9 +39,10 @@ Object oZoomEquipo is a cWebView
         WebSetResponsive piColumnCount rmMobile to 4
 
         Object oZoomHeader is a cWebHtmlBox
+            // Header visual personalizado del zoom
             Set piColumnSpan to 12
             Set psCSSClass to "ModuleHeader ZoomHeader"
-            Set psHtml to '<section class="ModuleHeaderCard Compact"><div><span class="ModuleEyebrow">Clubes</span><h1>Ficha de equipo</h1><p>Informacion base del equipo y liga vinculada.</p></div><div class="ModuleHeaderBadge">Detalle</div></section>'
+            Set psHtml to '<section class="ModuleHeaderCard Compact"><div><span class="ModuleEyebrow">Clubes</span><h1>Detalle de equipo</h1><p>Informacion base del club y liga vinculada.</p></div><div class="ModuleHeaderBadge">Registro</div></section>'
             WebSetResponsive piColumnSpan rmMobile to 4
         End_Object
 
@@ -66,6 +68,7 @@ Object oZoomEquipo is a cWebView
             WebRegisterPath ntNavigateForward oSelectLiga
 
             Procedure OnPrompt
+                // Abre el selector de ligas
                 Send NavigatePath
             End_Procedure
         End_Object 
@@ -124,7 +127,7 @@ Object oZoomEquipo is a cWebView
         Get GetNavigateData to NavigateData
         Get HasRecord of hoDD to bHasRecord
 
-        // let's hide all buttons and then Show the ones we want
+        // Muestra solo las acciones que tocan segun el modo
         WebSet pbRender of oEditBtn to False
         WebSet pbRender of oSaveBtn to False
         WebSet pbRender of oCancelChangesBtn to False
@@ -141,30 +144,30 @@ Object oZoomEquipo is a cWebView
     End_Procedure
 
     Procedure OnViewSaved Handle hoServer Boolean bChanged
-        // Close after save
+        // Al guardar vuelve a la vista anterior
         Send NavigateClose Self
     End_Procedure
 
-    // this will close the view after a delete
     Procedure OnViewDeleted Handle hoDDO
+        // Al eliminar vuelve a la vista anterior
         Send NavigateClose Self
     End_Procedure
 
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
         Case Begin
             Case (NavigateData.eNavigateType = nfFromMain)
-                // If from main, this is a propbably a main file Select to Zoom.
+                // Entrada desde un listado principal
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromParent)
-                // If from parent, this is a constrained drill down.
+                // Entrada desde una vista padre
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromChild)
-                // If from child, this is a probably a parent Zoom from a Zoom.
+                // Entrada desde una vista hija
                 Case Break
 
-            Case Else // must be nfUndefined
+            Case Else // nfUndefined
 
         Case End
 

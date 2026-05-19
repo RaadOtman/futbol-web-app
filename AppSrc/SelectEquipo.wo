@@ -26,6 +26,7 @@ Object oSelectEquipo is a cWebView
     End_Object 
 
     Object oequipo_DD is a cequipoDataDictionary
+        // Relacionamos equipo con liga
         Set DDO_Server to oliga_DD
     End_Object 
 
@@ -34,11 +35,13 @@ Object oSelectEquipo is a cWebView
 
 
     Object oSelectHeader is a cWebHtmlBox
+        // Cabecera visual del listado
         Set piColumnSpan to 0
         Set psCSSClass to "ModuleHeader SelectHeader"
-        Set psHtml to '<section class="ModuleHeaderCard"><div><span class="ModuleEyebrow">Clubes</span><h1>Equipos</h1><p>Gestiona equipos, su liga asociada y la informacion base para la operativa deportiva.</p></div><div class="ModuleHeaderBadge">Listado</div></section>'
+        Set psHtml to '<section class="ModuleHeaderCard"><div><span class="ModuleEyebrow">Clubes</span><h1>Equipos</h1><p>Vista central de clubes, liga asociada y datos base de gestion.</p></div><div class="ModuleHeaderBadge">Listado</div></section>'
     End_Object
 
+    // Lista principal de equipos
     Object oList is a cWebList
         Set piColumnSpan to 0
         Set psCSSClass to "MobileList SelectList ModuleList"
@@ -61,7 +64,8 @@ Object oSelectEquipo is a cWebView
         End_Object 
 
         Object oDetailButton is a cWebColumnButton
-            Set psCaption to "btn"
+            // Boton para abrir la ficha del equipo
+            Set psCaption to "Detalle"
             Set piWidth to 45
             Set pbFixedWidth to True
             Set pbResizable to False
@@ -73,6 +77,7 @@ Object oSelectEquipo is a cWebView
             WebRegisterPath ntNavigateForward oZoomEquipo
 
             Procedure OnClick
+                // Abre el zoom desde el boton de detalle
                 Send NavigatePath
             End_Procedure
 
@@ -82,9 +87,7 @@ Object oSelectEquipo is a cWebView
 
         End_Object 
 
-
-
-WebRegisterPath ntNavigateForward oZoomEquipo
+        WebRegisterPath ntNavigateForward oZoomEquipo
 
         Procedure OnRowClick String sRowId
             tWebNavigateData NavigateData
@@ -92,22 +95,22 @@ WebRegisterPath ntNavigateForward oZoomEquipo
 
             Case Begin
                 Case (NavigateData.eNavigateType = nfFromParent)
-
-//Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
+                    // Si viene desde una liga, abre el equipo seleccionado
                     Send NavigateForward of oZoomEquipo Self
                     Case Break
 
                 Case (NavigateData.eNavigateType = nfFromChild)
+                    // Si vuelve desde un hijo, cierra el selector
                     Send NavigateClose Self
                     Case Break
 
                 Case (NavigateData.eNavigateType = nfFromMain)
+                    // Si es una busqueda principal, devuelve el registro elegido
                     Send NavigateClose Self
                     Case Break
 
-                Case Else // must be nfUndefined
-
-//Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
+                Case Else // nfUndefined
+                    // Entrada normal desde el menu o dashboard
                     Send NavigateForward of oZoomEquipo Self
 
             Case End
@@ -126,6 +129,7 @@ WebRegisterPath ntNavigateForward oZoomEquipo
             Set psCaption to "Buscar"
 
             Procedure OnClick
+                // Abre la busqueda de la lista
                 Send Search of oList
             End_Procedure
 
@@ -139,6 +143,7 @@ WebRegisterPath ntNavigateForward oZoomEquipo
             WebRegisterPath ntNavigateForward oZoomEquipo
 
             Procedure OnClick
+                // Abre el zoom preparado para un equipo nuevo
                 Send NavigatePath
             End_Procedure
 
@@ -155,20 +160,20 @@ WebRegisterPath ntNavigateForward oZoomEquipo
 
         Case Begin
             Case (NavigateData.eNavigateType = nfFromParent)
-                // If from parent, this is a constrained drill down
+                // Navegacion desde una vista padre
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromChild)
-                // If from child, this is a probably a parent lookup from a Zoom
+                // Navegacion al volver desde una vista hija
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromMain)
-                // If from main, this is a probably a main-file lookup from a Zoom
+                // Cuando se usa como busqueda, no hace falta el boton de detalle
                 WebSet pbRender of oDetailButton to False
                 Case Break
 
-            Case Else // must be nfUndefined
-                // This may be the start of a drilldown query or this may be used for some kind of custom query.
+            Case Else // nfUndefined
+                // Entrada normal desde el menu o dashboard
 
         Case End
 
