@@ -7,7 +7,9 @@ Use cWebPanel.pkg
 Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
-
+Use cWebList.pkg
+Use cWebColumn.pkg
+Use cequipoDataDictionary.dd
 Use cligaDataDictionary.dd
 
 Object oZoomLiga is a cWebView
@@ -21,6 +23,11 @@ Object oZoomLiga is a cWebView
 
     Object oliga_DD is a cligaDataDictionary
     End_Object 
+    
+    Object oEquipo_DD is a cequipoDataDictionary
+    Set DDO_Server to oliga_DD
+    Set Constrain_File to liga.File_Number
+    End_Object
 
     Set Main_DD to oliga_DD
     Set Server  to oliga_DD
@@ -37,6 +44,26 @@ Object oZoomLiga is a cWebView
             Set peLabelPosition to lpTop
             Set psLabel to "Nombre"
         End_Object 
+        
+        Object oEquiposList is a cWebList
+            Set psCaption to "Equipos de esta liga"
+            Set Server to oEquipo_DD
+            Set piColumnSpan to 12
+            Set pbFillHeight to False
+            Set piMinHeight to 250
+            Set pbServerOnShow to True
+
+           Procedure OnShow
+                Forward Send OnShow
+                Send GridRefresh
+           End_Procedure
+
+            Object oEquipoNombreCol is a cWebColumn
+                Entry_Item equipo.Nombre
+                Set psCaption to "Equipo"
+                Set piWidth to 100
+            End_Object
+        End_Object
 
         Object oligaPais is a cWebForm
             Entry_Item liga.Pais
