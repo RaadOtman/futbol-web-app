@@ -29,11 +29,13 @@ Object oSelectLiga is a cWebView
 
 
     Object oSelectHeader is a cWebHtmlBox
+        // Cabecera visual del listado
         Set piColumnSpan to 0
         Set psCSSClass to "ModuleHeader SelectHeader"
-        Set psHtml to '<section class="ModuleHeaderCard"><div><span class="ModuleEyebrow">Competicion</span><h1>Ligas</h1><p>Consulta y administra las competiciones disponibles para organizar la estructura deportiva.</p></div><div class="ModuleHeaderBadge">Listado</div></section>'
+        Set psHtml to '<section class="ModuleHeaderCard"><div><span class="ModuleEyebrow">Competicion</span><h1>Ligas</h1><p>Administra competiciones, pais y capacidad maxima de equipos.</p></div><div class="ModuleHeaderBadge">Listado</div></section>'
     End_Object
 
+    // Lista principal de ligas
     Object oList is a cWebList
         Set piColumnSpan to 0
         Set psCSSClass to "MobileList SelectList ModuleList"
@@ -47,8 +49,7 @@ Object oSelectLiga is a cWebView
             Set psCaption to "Liga"
             Set piWidth to 500
         End_Object 
-        
-                Object oligaPais is a cWebColumn
+        Object oligaPais is a cWebColumn
             Entry_Item liga.Pais
             Set psCaption to "Pais"
             Set piWidth to 300
@@ -64,13 +65,14 @@ Object oSelectLiga is a cWebView
 
         Object oligaEquiposMax is a cWebColumn
             Entry_Item liga.EquiposMax
-            Set psCaption to "Maximo"
+            Set psCaption to "Capacidad"
             Set piWidth to 200
             Set pbNewLine to False
         End_Object 
 
         Object oDetailButton is a cWebColumnButton
-            Set psCaption to "btn"
+            // Boton para abrir la ficha de la liga
+            Set psCaption to "Detalle"
             Set piWidth to 45
             Set pbFixedWidth to True
             Set pbResizable to False
@@ -82,6 +84,7 @@ Object oSelectLiga is a cWebView
             WebRegisterPath ntNavigateForward oZoomLiga
 
             Procedure OnClick
+                // Abre el zoom desde el boton de detalle
                 Send NavigatePath
             End_Procedure
 
@@ -91,9 +94,7 @@ Object oSelectLiga is a cWebView
 
         End_Object 
 
-
-
-WebRegisterPath ntNavigateForward oZoomLiga
+        WebRegisterPath ntNavigateForward oZoomLiga
 
         Procedure OnRowClick String sRowId
             tWebNavigateData NavigateData
@@ -101,22 +102,22 @@ WebRegisterPath ntNavigateForward oZoomLiga
 
             Case Begin
                 Case (NavigateData.eNavigateType = nfFromParent)
-
-//Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
+                    // Si viene desde un padre, abre la ficha de la liga
                     Send NavigateForward of oZoomLiga Self
                     Case Break
 
                 Case (NavigateData.eNavigateType = nfFromChild)
+                    // Si vuelve desde un hijo, cierra el selector
                     Send NavigateClose Self
                     Case Break
 
                 Case (NavigateData.eNavigateType = nfFromMain)
+                    // Si es una busqueda principal, devuelve el registro elegido
                     Send NavigateClose Self
                     Case Break
 
-                Case Else // must be nfUndefined
-
-//Error DFERR_PROGRAM "NavigateForward to this from-parent child Select view not yet defined"
+                Case Else // nfUndefined
+                    // Entrada normal desde el menu o dashboard
                     Send NavigateForward of oZoomLiga Self
 
             Case End
@@ -135,6 +136,7 @@ WebRegisterPath ntNavigateForward oZoomLiga
             Set psCaption to "Buscar"
 
             Procedure OnClick
+                // Abre la busqueda de la lista
                 Send Search of oList
             End_Procedure
 
@@ -148,6 +150,7 @@ WebRegisterPath ntNavigateForward oZoomLiga
             WebRegisterPath ntNavigateForward oZoomLiga
 
             Procedure OnClick
+                // Abre el zoom preparado para una liga nueva
                 Send NavigatePath
             End_Procedure
 
@@ -164,20 +167,20 @@ WebRegisterPath ntNavigateForward oZoomLiga
 
         Case Begin
             Case (NavigateData.eNavigateType = nfFromParent)
-                // If from parent, this is a constrained drill down
+                // Navegacion desde una vista padre
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromChild)
-                // If from child, this is a probably a parent lookup from a Zoom
+                // Navegacion al volver desde una vista hija
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromMain)
-                // If from main, this is a probably a main-file lookup from a Zoom
+                // Cuando se usa como busqueda, no hace falta el boton de detalle
                 WebSet pbRender of oDetailButton to False
                 Case Break
 
-            Case Else // must be nfUndefined
-                // This may be the start of a drilldown query or this may be used for some kind of custom query.
+            Case Else // nfUndefined
+                // Entrada normal desde el menu o dashboard
 
         Case End
 

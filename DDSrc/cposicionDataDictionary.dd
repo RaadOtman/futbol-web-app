@@ -9,6 +9,7 @@ Class cposicionDataDictionary is a DataDictionary
         Forward Send Construct_Object
         Set Main_File to posicion.File_Number
 
+        // Relacion muchos-a-muchos con jugador usando jugadorposicion como tabla puente.
         Set Add_Client_File to jugadorposicion.File_Number
 
         Set Foreign_Field_Option DD_KEYFIELD DD_NOPUT to True

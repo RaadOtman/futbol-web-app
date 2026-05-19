@@ -27,10 +27,12 @@ Object oZoomEntrenador is a cWebView
     End_Object 
 
     Object oequipo_DD is a cequipoDataDictionary
+        // Relacionamos equipo con liga
         Set DDO_Server to oliga_DD
     End_Object 
 
     Object oentrenador_DD is a centrenadorDataDictionary
+        // Relacionamos entrenador con equipo
         Set DDO_Server to oequipo_DD
     End_Object 
 
@@ -44,15 +46,16 @@ Object oZoomEntrenador is a cWebView
         WebSetResponsive piColumnCount rmMobile to 4
 
         Object oZoomHeader is a cWebHtmlBox
+            // Header visual personalizado del zoom
             Set piColumnSpan to 12
             Set psCSSClass to "ModuleHeader ZoomHeader"
-            Set psHtml to '<section class="ModuleHeaderCard Compact"><div><span class="ModuleEyebrow">Staff tecnico</span><h1>Ficha de entrenador</h1><p>Perfil tecnico, nacionalidad y equipo asociado.</p></div><div class="ModuleHeaderBadge">Detalle</div></section>'
+            Set psHtml to '<section class="ModuleHeaderCard Compact"><div><span class="ModuleEyebrow">Staff tecnico</span><h1>Detalle de entrenador</h1><p>Perfil tecnico, nacionalidad y equipo asignado.</p></div><div class="ModuleHeaderBadge">Registro</div></section>'
             WebSetResponsive piColumnSpan rmMobile to 4
         End_Object
 
         Object oentrenadorNombre is a cWebForm
             Entry_Item entrenador.Nombre
-            Set piColumnSpan to 10
+            Set piColumnSpan to 6
             Set piColumnIndex to 0
             Set peLabelPosition to lpTop
             Set psLabel to "Nombre"
@@ -61,8 +64,8 @@ Object oZoomEntrenador is a cWebView
 
         Object oentrenadorApellido is a cWebForm
             Entry_Item entrenador.Apellido
-            Set piColumnSpan to 10
-            Set piColumnIndex to 0
+            Set piColumnSpan to 6
+            Set piColumnIndex to 6
             Set peLabelPosition to lpTop
             Set psLabel to "Apellido"
             WebSetResponsive piColumnSpan rmMobile to 4
@@ -79,8 +82,8 @@ Object oZoomEntrenador is a cWebView
 
         Object oequipoID is a cWebForm
             Entry_Item equipo.ID
-            Set piColumnSpan to 2
-            Set piColumnIndex to 0
+            Set piColumnSpan to 4
+            Set piColumnIndex to 8
             Set peLabelPosition to lpTop
             Set psLabel to "Equipo"
             Set pbPromptButton to True
@@ -90,6 +93,7 @@ Object oZoomEntrenador is a cWebView
             WebRegisterPath ntNavigateForward oSelectEquipo
 
             Procedure OnPrompt
+                // Abre el selector de equipos
                 Send NavigatePath
             End_Procedure
         End_Object 
@@ -148,7 +152,7 @@ Object oZoomEntrenador is a cWebView
         Get GetNavigateData to NavigateData
         Get HasRecord of hoDD to bHasRecord
 
-        // let's hide all buttons and then Show the ones we want
+        // Muestra solo las acciones que tocan segun el modo
         WebSet pbRender of oEditBtn to False
         WebSet pbRender of oSaveBtn to False
         WebSet pbRender of oCancelChangesBtn to False
@@ -165,30 +169,30 @@ Object oZoomEntrenador is a cWebView
     End_Procedure
 
     Procedure OnViewSaved Handle hoServer Boolean bChanged
-        // Close after save
+        // Al guardar vuelve a la vista anterior
         Send NavigateClose Self
     End_Procedure
 
-    // this will close the view after a delete
     Procedure OnViewDeleted Handle hoDDO
+        // Al eliminar vuelve a la vista anterior
         Send NavigateClose Self
     End_Procedure
 
     Procedure OnNavigateForward tWebNavigateData NavigateData Integer hoInvokingView Integer hoInvokingObject
         Case Begin
             Case (NavigateData.eNavigateType = nfFromMain)
-                // If from main, this is a propbably a main file Select to Zoom.
+                // Entrada desde un listado principal
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromParent)
-                // If from parent, this is a constrained drill down.
+                // Entrada desde una vista padre
                 Case Break
 
             Case (NavigateData.eNavigateType = nfFromChild)
-                // If from child, this is a probably a parent Zoom from a Zoom.
+                // Entrada desde una vista hija
                 Case Break
 
-            Case Else // must be nfUndefined
+            Case Else // nfUndefined
 
         Case End
 
